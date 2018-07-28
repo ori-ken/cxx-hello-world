@@ -1,10 +1,11 @@
 #--- conf ----
+SRC_DIR     = ./src
+SRC         = $(wildcard $(SRC_DIR)/*cxx)
+OBJ         = $(patsubst %.cxx,%.o,$(SRC))
+TARGET      = $(SRC_DIR)/HelloWorld
 
-SRC_DIR = ./src
-OBJ     = $(SRC_DIR)/main.o
-TARGET  = $(SRC_DIR)/HelloWorld
-
-
+#COMPILE.cc  = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+LINK.o      = $(CXX) $(LDFLAGS) $(TARGET_ARCH)
 
 #--- tagrget ----
 .PHONY: all
@@ -12,10 +13,10 @@ TARGET  = $(SRC_DIR)/HelloWorld
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(LINK.cc) $< $(OUTPUT_OPTION)
+	$(LINK.o) $< $(OUTPUT_OPTION)
 
 %.o: %.cxx
 	$(COMPILE.cc) $< $(OUTPUT_OPTION)
 
 clean:
-	rm -rf $(OBJ) $(TARGET)
+	$(RM) $(OBJ) $(TARGET)
