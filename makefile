@@ -1,9 +1,11 @@
 #--- conf ----
 SRC_DIR     = ./src
+INC_DIR     = ./include
 SRC         = $(wildcard $(SRC_DIR)/*cxx)
 OBJ         = $(patsubst %.cxx,%.o,$(SRC))
 TARGET      = $(SRC_DIR)/HelloWorld
 
+CPPFLAGS    = -I$(INC_DIR)
 #COMPILE.cc  = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
 LINK.o      = $(CXX) $(LDFLAGS) $(TARGET_ARCH)
 
@@ -20,3 +22,6 @@ $(TARGET): $(OBJ)
 
 clean:
 	$(RM) $(OBJ) $(TARGET)
+
+test:
+	$(TARGET)
