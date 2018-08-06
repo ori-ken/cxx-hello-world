@@ -8,20 +8,21 @@ c++ "hello world" trunk for private
 $ cat /etc/redhat-release
 Scientific Linux release 6.10 (Carbon)
 $ gcc -dumpversion
-4.4.7`
+4.4.7
 ```
 
 ## Build
 ```
 $ cd cxx-hello-world/
 $ make
-g++    -c src/main.cxx -o src/main.o
-g++     src/main.o -o src/HelloWorld
+g++  -I./include  -c src/main.cxx -o src/main.o
+g++   src/main.o -o src/HelloWorld
 ``` 
 
 ## Execute
 ```
-$ ./src/HelloWorld
-Hello world2
+$ make test
+./src/HelloWorld
+Hello, World.
 ```
 
