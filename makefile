@@ -6,6 +6,7 @@ OBJ         = $(patsubst %.cxx,%.o,$(SRC))
 TARGET      = $(SRC_DIR)/HelloWorld
 
 CPPFLAGS    = -I$(INC_DIR)
+CXXFLAGS    = -std=c++0x
 #COMPILE.cc  = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
 LINK.o      = $(CXX) $(LDFLAGS) $(TARGET_ARCH)
 
