@@ -1,7 +1,7 @@
 # cxx-hello-world
 [![Build Status](https://travis-ci.org/ori-ken/cxx-hello-world.svg?branch=master)](https://travis-ci.org/ori-ken/cxx-hello-world)
 
-c++ "hello world" trunk for private
+c++ "hello world" 用のプライベートなtrunk。
 
 ## Environment
 ```
